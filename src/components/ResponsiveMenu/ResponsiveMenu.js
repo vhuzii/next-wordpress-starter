@@ -25,14 +25,14 @@ const ResponsiveMenu = ({ navListItems }) => {
       </div>
       {/* movile view */}
       <div className="md:hidden selt-end">
-        <Hamburger className={'mt-20'} toggled={isOpen} size={19} toggle={toggleMenu} />
+        <Hamburger color="#7589a0" className={'mt-20'} toggled={isOpen} size={25} toggle={toggleMenu} />
       </div>
       <div
         className={`items-center ${
           isOpen ? "block" : "hidden"
         } mt-4 md:mt-0 absolute flex z-10`}
       >
-        <ul className={'flex-column'}>
+        <ul className={'flex-column ' + styles.mobileMenu}>
           {navListItems?.map((listItem) => {
             return <NavListItem key={listItem.id} className={styles.navSubMenu} item={listItem} />;
           })}

@@ -181,7 +181,6 @@ const Nav = () => {
         <p className={styles.navName}>
           <Link href="/">{title}</Link>
         </p>
-        {<ResponsiveMenu navListItems={navigation} />}
         <div className={styles.navSearch}>
           {searchVisibility === SEARCH_HIDDEN && (
             <button onClick={handleOnToggleSearch} disabled={!searchIsLoaded}>
@@ -223,6 +222,7 @@ const Nav = () => {
             </form>
           )}
         </div>
+        {<ResponsiveMenu navListItems={navigation} />}
       </Section>
     </nav>
   );
