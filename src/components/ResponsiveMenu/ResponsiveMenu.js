@@ -24,8 +24,8 @@ const ResponsiveMenu = ({ navListItems }) => {
         </ul>
       </div>
       {/* movile view */}
-      <div className="md:hidden selt-end">
-        <Hamburger color="#7589a0" className={'mt-20'} toggled={isOpen} size={25} toggle={toggleMenu} />
+      <div className={'md:hidden selt-end ' + styles.hamburger}>
+        <Hamburger className={'mt-20'} toggled={isOpen} size={25} toggle={toggleMenu} />
       </div>
       <div
         className={`items-center ${
