@@ -182,7 +182,7 @@ const Nav = () => {
           <Link href="/">{title}</Link>
         </p>
         <div className='flex items-center md:flex-row-reverse'>
-          <div className={styles.navSearch + ' md:ml-4'}>
+          <div className={styles.navSearch}>
             {searchVisibility === SEARCH_HIDDEN && (
               <button onClick={handleOnToggleSearch} disabled={!searchIsLoaded}>
                 <span className="sr-only">Toggle Search</span>
