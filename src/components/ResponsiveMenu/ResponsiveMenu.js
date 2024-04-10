@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { useState } from "react";
 import { Squash as Hamburger } from "hamburger-react";
 import styles from './ResponsiveMenu.module.scss';
@@ -28,11 +27,11 @@ const ResponsiveMenu = ({ navListItems }) => {
         <Hamburger className={'mt-20'} toggled={isOpen} size={25} toggle={toggleMenu} />
       </div>
       <div
-        className={`items-center ${
+        className={` ${
           isOpen ? "block" : "hidden"
-        } mt-4 md:mt-0 absolute flex z-10`}
+        } absolute z-10 mt-2 w-48 bg-white rounded-md shadow-lg py-2 ` + styles.mobileMenu}
       >
-        <ul className={'flex-column ' + styles.mobileMenu}>
+        <ul className={'flex-column ' + styles.navMenu}>
           {navListItems?.map((listItem) => {
             return <NavListItem key={listItem.id} className={styles.navSubMenu} item={listItem} />;
           })}

@@ -1,7 +1,6 @@
 @import "styles/settings/__settings";
 
 .navMenu {
-  display: flex;
   align-items: center;
   flex-grow: 0;
   list-style: none;
@@ -81,7 +80,8 @@
 
 
 .mobileMenu {
-  width: 500px;
+  width: 225px;
+  right: 0;
 }
 
 .hamburger {
