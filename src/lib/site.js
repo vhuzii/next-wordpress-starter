@@ -24,10 +24,11 @@ export async function getSiteMetadata() {
   }
 
   const { generalSettings } = siteData?.data || {};
+  const titleOverridden = process.env.WORDPRESS_SITE_TITLE;
   let { title, description, language } = generalSettings;
 
   const settings = {
-    title,
+    title: titleOverridden || title,
     siteTitle: title,
     description,
   };

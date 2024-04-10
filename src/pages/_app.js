@@ -13,6 +13,8 @@ import 'styles/globals.scss';
 import 'styles/wordpress.scss';
 import variables from 'styles/_variables.module.scss';
 
+import 'tailwindcss/tailwind.css';
+
 function App({ Component, pageProps = {}, metadata, recentPosts, categories, menus }) {
   const site = useSiteContext({
     metadata,
