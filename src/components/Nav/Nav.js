@@ -181,48 +181,50 @@ const Nav = () => {
         <p className={styles.navName}>
           <Link href="/">{title}</Link>
         </p>
-        <div className={styles.navSearch}>
-          {searchVisibility === SEARCH_HIDDEN && (
-            <button onClick={handleOnToggleSearch} disabled={!searchIsLoaded}>
-              <span className="sr-only">Toggle Search</span>
-              <FaSearch />
-            </button>
-          )}
-          {searchVisibility === SEARCH_VISIBLE && (
-            <form ref={formRef} action="/search" data-search-is-active={!!query}>
-              <input
-                type="search"
-                name="q"
-                value={query || ''}
-                onChange={handleOnSearch}
-                autoComplete="off"
-                placeholder="Search..."
-                required
-              />
-              <div className={styles.navSearchResults}>
-                {results.length > 0 && (
-                  <ul>
-                    {results.map(({ slug, title }, index) => {
-                      return (
-                        <li key={slug}>
-                          <Link tabIndex={index} href={postPathBySlug(slug)}>
-                            {title}
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                )}
-                {results.length === 0 && (
-                  <p>
-                    Sorry, not finding anything for <strong>{query}</strong>
-                  </p>
-                )}
-              </div>
-            </form>
-          )}
+        <div className='flex items-center md:flex-row-reverse'>
+          <div className={styles.navSearch + ' md:ml-4'}>
+            {searchVisibility === SEARCH_HIDDEN && (
+              <button onClick={handleOnToggleSearch} disabled={!searchIsLoaded}>
+                <span className="sr-only">Toggle Search</span>
+                <FaSearch />
+              </button>
+            )}
+            {searchVisibility === SEARCH_VISIBLE && (
+              <form ref={formRef} action="/search" data-search-is-active={!!query}>
+                <input
+                  type="search"
+                  name="q"
+                  value={query || ''}
+                  onChange={handleOnSearch}
+                  autoComplete="off"
+                  placeholder="Search..."
+                  required
+                />
+                <div className={styles.navSearchResults}>
+                  {results.length > 0 && (
+                    <ul>
+                      {results.map(({ slug, title }, index) => {
+                        return (
+                          <li key={slug}>
+                            <Link tabIndex={index} href={postPathBySlug(slug)}>
+                              {title}
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
+                  {results.length === 0 && (
+                    <p>
+                      Sorry, not finding anything for <strong>{query}</strong>
+                    </p>
+                  )}
+                </div>
+              </form>
+            )}
+          </div>
+          {<ResponsiveMenu navListItems={navigation} />}
         </div>
-        {<ResponsiveMenu navListItems={navigation} />}
       </Section>
     </nav>
   );
