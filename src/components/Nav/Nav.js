@@ -12,7 +12,6 @@ import Section from 'components/Section';
 import styles from './Nav.module.scss';
 import ResponsiveMenu from 'components/ResponsiveMenu';
 
-
 const SEARCH_VISIBLE = 'visible';
 const SEARCH_HIDDEN = 'hidden';
 
@@ -181,7 +180,7 @@ const Nav = () => {
         <p className={styles.navName}>
           <Link href="/">{title}</Link>
         </p>
-        <div className='flex items-center md:flex-row-reverse'>
+        <div className="flex items-center md:flex-row-reverse">
           <div className={styles.navSearch}>
             {searchVisibility === SEARCH_HIDDEN && (
               <button onClick={handleOnToggleSearch} disabled={!searchIsLoaded}>

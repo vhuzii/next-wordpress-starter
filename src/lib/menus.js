@@ -23,7 +23,7 @@ export async function getAllMenus() {
       queryIncludes: 'index',
     }),
   });
-  
+
   menus.push(defaultNavigation);
 
   return {
@@ -42,8 +42,10 @@ export function mapMenuData(menu = {}) {
   data.menuItems = data.menuItems.edges.map(({ node }) => {
     // TODO: Properly handle category paths #1
     const path = node.path.replace('category', 'categories');
-    return { ...node, path};
+    return { ...node, path };
   });
+
+  console.log(JSON.stringify(data, null, 2));
 
   return data;
 }
